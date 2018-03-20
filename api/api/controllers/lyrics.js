@@ -10,7 +10,7 @@ function getLyrics(req, res) {
     var data = db.getData();
 
     //check if we filter by person
-    if(req.swagger.params.person) {
+    if(req.swagger.params.person.value) {
         data = data.filter(function(element){
             return element.person.toLowerCase() === req.swagger.params.person.value.toLowerCase();
         });
