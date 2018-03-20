@@ -33,3 +33,11 @@ Generate a TypeScript Library:
 
 `./codegen/gen-typescrpt.sh`
 
+## ng-demo
+Contains an Angular demo app that uses the codegen generated client library to connect to our api.
+
+```
+[sudo npm install -g @angular/cli
+cd ng-demo
+ng serve --open
+```
