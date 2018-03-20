@@ -1,6 +1,6 @@
 var data = [{
     "id": 1,
-    "text": "I am the walrus.",
+    "text": "Oh that magic feeling, nowhere to go.",
     "person": "Paul"
 }, {
     "id": 2,
@@ -8,7 +8,7 @@ var data = [{
     "person": "John"
 }, { 
     id: 3,
-    "text": "Here comes the sun.",
+    "text": "Here comes the sun, and I say it's alright.",
     "person": "George"
   }, {
       id: 4,
