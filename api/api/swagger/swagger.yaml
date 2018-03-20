@@ -1,0 +1,94 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Lyrics API
+  description: A brief collection of lyrics, and who sang 'em.
+# during dev, should point to your local machine
+host: localhost:10010
+# basePath prefixes all resource paths 
+basePath: /
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /lyrics:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: lyrics
+    get:
+      description: Returns music lyrics
+      # used as the method name of the controller
+      operationId: getLyrics
+      parameters:
+        - name: person
+          in: query
+          description: The name of the person who sang the lyric
+          required: false
+          type: string      
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/LyricsResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /lyrics/{id}:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: lyrics
+    get:
+      description: Return a single lyric
+      # used as the method name of the controller
+      operationId: getLyricById
+      parameters:
+        - name: id
+          in: path
+          description: ID of lyric to fetch
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/LyricsResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"            
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  LyricsResponse:
+    required:
+      - id
+      - person
+      - text
+    properties:
+      id:
+        type: number
+        description: Lyric ID
+      person:
+        type: string
+        description: Who sang the line
+      text:
+        type: string
+        description: The text of the lyric
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
