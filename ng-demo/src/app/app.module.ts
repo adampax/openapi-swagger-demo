@@ -4,13 +4,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+//import { DefaultService } from '../services/'
+import { ApiModule } from './services/lyricsapi/api.module';
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ApiModule
   ],
   providers: [],
   bootstrap: [AppComponent]

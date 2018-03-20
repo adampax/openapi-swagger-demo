@@ -31,7 +31,7 @@ Note: You'll need to have the api running before building the client library, as
 
 Generate a TypeScript Library:
 
-`./codegen/gen-typescrpt.sh`
+`./codegen/gen-typescript.sh`
 
 ## ng-demo
 Contains an Angular demo app that uses the codegen generated client library to connect to our api.
@@ -39,5 +39,6 @@ Contains an Angular demo app that uses the codegen generated client library to c
 ```
 [sudo npm install -g @angular/cli
 cd ng-demo
+npm install
 ng serve --open
 ```
