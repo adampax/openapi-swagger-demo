@@ -51,3 +51,15 @@ cd ng-demo
 npm install
 ng serve --open
 ```
+
+## Docs
+
+Demo docs site that uses our OpenAPI spec served up via the api. This example uses [swagger-ui-express](https://github.com/scottie1984/swagger-ui-express). Also check out [swagger-ui](https://github.com/swagger-api/swagger-ui).
+
+Note: Need the api running!
+
+```
+npm install docs
+node docs/app.js
+```
+Then check out [http://127.0.0.1:3006](http://127.0.0.1:3006)

@@ -1,0 +1,16 @@
+{
+  "name": "lyrics-docs",
+  "version": "1.0.0",
+  "description": "OpenAPI generated documentation for our lyrics demo api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Adam Paxton",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "swagger-ui-express": "^2.0.15"
+  }
+}
