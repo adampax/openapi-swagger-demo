@@ -17,7 +17,7 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
   var port = 10010;
   app.listen(port);
 
-  if (swaggerExpress.runner.swagger.paths['/hello']) {
-    console.log('running on http://127.0.0.1:' + port);
+  if (swaggerExpress.runner.swagger.paths['/lyrics']) {
+    console.log('api running, try http://127.0.0.1:' + port+"/lyrics");
   }
 });
